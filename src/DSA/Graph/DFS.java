@@ -1,8 +1,10 @@
 package src.DSA.Graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class BFS {
+public class DFS {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -21,7 +23,7 @@ public class BFS {
             int x = sc.nextInt();
             int y = sc.nextInt();
             graph.get(x).add(y);
-            graph.get(y).add(x);
+            graph.get(y).add(x); // If the graph is undirected
         }
 
         System.out.println("Enter the source node");
@@ -29,28 +31,22 @@ public class BFS {
         System.out.println("Enter the target node");
         int t = sc.nextInt();
 
-        System.out.println("Breadth First Search Result: " + bfs(graph, s, t));
-
+        boolean[] visited = new boolean[n];
+        dfs(s,graph,visited);
+        try {
+            System.out.println("Depth First Search Result: " + visited[t]);
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("No Path");
+         }
         sc.close();
     }
 
-    public static boolean bfs(List<List<Integer>> graph, int s, int e) {
-        Queue<Integer> queue = new LinkedList<>();
-        boolean[] visited = new boolean[graph.size()];
-
-        queue.add(s);
-        visited[s] = true;
-
-        while (!queue.isEmpty()) {
-
-            int u = queue.poll();
-            for (int v : graph.get(u)) {
-                if (!visited[v]) {
-                    queue.add(v);
-                    visited[v] = true;
-                }
+    private static void dfs(int u,List<List<Integer>> graph, boolean[] visited) {
+        visited[u] = true;
+        for(int v : graph.get(u)) {
+            if(!visited[v]) {
+                dfs(v,graph,visited);
             }
         }
-        return visited[e];
     }
 }
