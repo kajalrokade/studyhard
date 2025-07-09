@@ -9,12 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.kajal.movie</groupId>
-    <artifactId>ticket-booking</artifactId>
+    <groupId>com.kajal.code</groupId>
+    <artifactId>studyhard</artifactId>
     <version>1.0.0</version>
-    <name>Movie Ticket Booking System</name>
-    <description>App To Book Movie Tickets</description>
-    <dependencies>
+    <packaging>pom</packaging>
+    <name>Study Repository</name>
+    <description>App is used to practice DSA and Other Java Concepts</description>
+     <dependencies>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
