@@ -15,5 +15,5 @@ public class BaseModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Boolean isDeleted;
+    private boolean isDeleted;
 }

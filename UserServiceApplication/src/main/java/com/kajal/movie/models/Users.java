@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users",schema = "public")
 @Getter
 @Setter
 public class Users extends BaseModel {

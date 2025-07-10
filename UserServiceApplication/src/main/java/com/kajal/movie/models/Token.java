@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Entity
-@Table(name = "token")
+@Table(name = "token",schema = "public")
 @Data
 public class Token extends BaseModel{
 
