@@ -5,10 +5,7 @@ import com.kajal.movie.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -33,5 +30,10 @@ public class UserController {
     public ResponseEntity<String> logout(@RequestBody LogoutRequestDTO token) {
         userService.logoutUser(token);
         return ResponseEntity.ok().body("Logged out successfully");
+    }
+
+    @PostMapping(value ="/validateToken")
+    public ResponseEntity<ValidateTokenResponse> validateToken(@RequestParam("token") String token) {
+           return ResponseEntity.ok().body(ValidateTokenResponse.fromUser(userService.validateToken(token)));
     }
 }
