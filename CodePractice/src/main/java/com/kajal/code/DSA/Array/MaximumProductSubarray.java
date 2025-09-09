@@ -21,5 +21,6 @@ public class MaximumProductSubarray {
 
             result = Math.max(result, maxProd);
         }
+        System.out.println(result);
     }
 }

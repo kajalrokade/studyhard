@@ -20,7 +20,7 @@ public class FindMissingNumber {
             actualSum += num;
         }
 
-        return expectedSum - actualSum<0 ? 0 : expectedSum-actualSum;
+        return  expectedSum-actualSum;
     }
     public static int missingNumberBruteForce(int[] a) {
         Arrays.sort(a);
