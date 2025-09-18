@@ -3,17 +3,18 @@ package com.kajal.code.DSA.Array;
 
 public class RemoveDuplicateFromSortedArray {
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 1, 2, 2, 3, 4, 4, 5};
-        if (nums.length == 0)
-            return;
+        int[] nums = new int[]{0,1,0,2,1,0,1,3,2,1,2,1};
+        int left=0;
+        int right=nums.length-1;
+        int leftMax= nums[left];
+        int rightMax=nums[right];
 
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[j] != nums[i]) {
-                i++;
-                nums[i] = nums[j];
-            }
+        while(left<right){
+           if(leftMax < rightMax){
+               left++;
+           } else{
+               right--;
+           }
         }
-        System.out.println(i + 1);
     }
 }
