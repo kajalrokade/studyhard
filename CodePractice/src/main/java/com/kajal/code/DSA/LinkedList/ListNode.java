@@ -10,6 +10,11 @@ public class ListNode {
         size = 1;
         this.next = null;
     }
+    public ListNode(int data,ListNode next) {
+        this.data = data;
+        size = 1;
+        this.next = next;
+    }
 
     public int getData() {
         return data;
