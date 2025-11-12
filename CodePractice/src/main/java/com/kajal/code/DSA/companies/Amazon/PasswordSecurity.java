@@ -1,4 +1,4 @@
-package com.kajal.code.DSA.Amazon;
+package com.kajal.code.DSA.companies.Amazon;
 
 import java.util.*;
 

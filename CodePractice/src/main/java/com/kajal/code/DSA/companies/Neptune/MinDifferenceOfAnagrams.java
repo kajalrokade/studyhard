@@ -1,4 +1,4 @@
-package com.kajal.code.DSA.Neptune;
+package com.kajal.code.DSA.companies.Neptune;
 
 import java.io.IOException;
 import java.util.ArrayList;
